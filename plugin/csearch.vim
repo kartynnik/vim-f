@@ -34,7 +34,7 @@ endif
 if ! exists("g:csearch_env")
     let g:csearch_env = "CS_WSVN=no CS_COLORS=no"
 endif
-" Environment variable settings to override
+" Results window height
 if ! exists("g:csearch_window_height")
     let g:csearch_window_height = 10
 endif
