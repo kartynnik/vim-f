@@ -34,6 +34,10 @@ endif
 if ! exists("g:csearch_env")
     let g:csearch_env = "CS_WSVN=no CS_COLORS=no"
 endif
+" Environment variable settings to override
+if ! exists("g:csearch_window_height")
+    let g:csearch_window_height = 10
+endif
 
 
 " ----- Mappings -----
@@ -58,7 +62,7 @@ function! CodeSearch(args)
 
   echom "Performing command: " . cmd
   cexpr system(cmd)
-  copen
+  copen g:csearch_window_height
 
   let b:csearch_args = a:args
   setlocal statusline=%{b:csearch_args}
